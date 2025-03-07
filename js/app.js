@@ -8,10 +8,16 @@ const msg = document.querySelector("#msg");
 
 const drawGame = () => {
     msg.innerHTML = "It's a draw!, play again";
+    msg.style.backgroundColor = "#081b31";
 };
 
-const showWinner = (userWin) => {
-    msg.innerHTML = userWin? "You win!" : "Computer wins!";
+const showWinner = (userWin, userChoice, compChoice) => {
+    msg.innerHTML = userWin? 
+    `you win!, ${userChoice} beats ${compChoice}`:
+    `Computer wins!, ${compChoice} beats ${userChoice}`;
+    
+    // userWin? msg.style.backgroundColor = "green" : msg.style.backgroundColor = "red";
+    msg.style.backgroundColor = userWin? "green" : "red"; 
     userWin? userScore++ : computerScore++;
     us.innerHTML = userScore;
     cs.innerHTML = computerScore;
@@ -45,7 +51,7 @@ const playGame = (userChoice) => {
             //paper, rock
             userWin = compChoice === "rock"? false : true;
         }
-        showWinner(userWin);
+        showWinner(userWin, userChoice, compChoice);
     }    
 };
 
