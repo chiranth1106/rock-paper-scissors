@@ -7,7 +7,7 @@ const cs = document.querySelector("#computer-score");
 const msg = document.querySelector("#msg");
 
 const drawGame = () => {
-    msg.innerHTML = "It's a draw!";
+    msg.innerHTML = "It's a draw!, play again";
 };
 
 const showWinner = (userWin) => {
